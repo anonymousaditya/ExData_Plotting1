@@ -6,7 +6,7 @@ data$x <- strptime(data$x,"%d/%m/%Y %H:%M:%S")
 png(file = "plot4.png", width = 480, height = 480, units = "px")
 par(mfrow = c(2,2))
 with(data,{
-       hist(data$Global_active_power, col = "red", main = "Global Active power",xlab = "Global Active Power (kilowatts)")
+       plot(x,Global_active_power, type = "l", ylab = "Global active power")
        plot(x,Voltage, type = "l",xlab = "datetime",ylab = "Voltage")
        plot(data$x,data$Sub_metering_1, type = "l", xlab = "",ylab = "energy sub metering")
        lines(data$x,data$Sub_metering_2, type = "l", xlab = "",ylab = "energy sub metering", col = "red")
